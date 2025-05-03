@@ -1,0 +1,25 @@
+{
+    "valid_user": {
+      "username": "Tahsin",
+      "password": "Tahsin222"
+    },
+    "invalid_users": [
+      {
+        "username": "WrongUser",
+        "password": "Tahsin222"
+      },
+      {
+        "username": "Tahsin",
+        "password": "WrongPass"
+      },
+      {
+        "username": "",
+        "password": "Tahsin222"
+      },
+      {
+        "username": "Tahsin",
+        "password": ""
+      }
+    ]
+  }
+  

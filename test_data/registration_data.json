@@ -1,0 +1,67 @@
+{
+    "valid_user": {
+      "username": "uniq12m34",
+      "email": "uniqueuser123@yopmail.com",
+      "password": "Strong123",
+      "first_name": "John",
+      "last_name": "Doe",
+      "phone": "12345678",
+      "country": "Bangladesh",
+      "city": "Dhaka",
+      "address": "123 Main St",
+      "state": "Dhaka",
+      "postal_code": "1205"
+    },
+    "existing_username": {
+      "username": "Tahsin",
+      "email": "someuser@yopmail.com",
+      "password": "Strong123",
+      "first_name": "Ontor",
+      "last_name": "Sqa",
+      "phone": "12345678",
+      "country": "Bangladesh",
+      "city": "Dhaka",
+      "address": "456 Lane",
+      "state": "Dhaka",
+      "postal_code": "408"
+    },
+    "invalid_email": {
+      "username": "InvalidEmail",
+      "email": "invalidemail",
+      "password": "Strong123",
+      "first_name": "Ali",
+      "last_name": "Tester",
+      "phone": "12345678",
+      "country": "Bangladesh",
+      "city": "Dhaka",
+      "address": "Dhaka",
+      "state": "Dhaka",
+      "postal_code": "408"
+    },
+    "missing_email": {
+      "username": "NoEmail",
+      "email": "",
+      "password": "Strong123",
+      "first_name": "Sara",
+      "last_name": "Tester",
+      "phone": "12345678",
+      "country": "Bangladesh",
+      "city": "Dhaka",
+      "address": "Dhaka",
+      "state": "Dhaka",
+      "postal_code": "408"
+    },
+    "invalid_password": {
+      "username": "WeakPass",
+      "email": "weakpass@yopmail.com",
+      "password": "1234",
+      "first_name": "Nashit",
+      "last_name": "QA",
+      "phone": "12345678",
+      "country": "Bangladesh",
+      "city": "Dhaka",
+      "address": "Dhaka",
+      "state": "Dhaka",
+      "postal_code": "408"
+    }
+}
