@@ -1,36 +1,30 @@
+import re
 class CheckoutPage:
     def __init__(self, page):
         self.page = page
 
-    # Navigate to the homepage
     def navigate(self):
         self.page.goto("https://advantageonlineshopping.com/#/")
 
-    # Go to the shopping cart page
-    def go_to_cart(self):
-        self.page.get_by_role("link", name="ShoppingCart").click()
+    def go_to_speaker_product(self, product_name):
+        self.page.get_by_role("link", name="SpeakersCategory", exact=True).click()
+        self.page.get_by_text(product_name).click()
 
-    # Add a product to the cart by selecting its price
-    def add_product_to_cart(self, price):
-        self.page.locator("a[ng-click*=\"redirect('/category/'\"]", has_text="SPEAKERS").click()
-        self.page.get_by_role("paragraph").filter(has_text=price).click()
+    def add_to_cart(self):
         self.page.get_by_role("button", name="ADD TO CART").click()
 
-    # Remove a product from the cart by price
-    def remove_product_from_cart(self, price):
-        self.page.get_by_role("cell", name=price, exact=True).locator("div").nth(1).click()
+    def checkout(self):
+        self.page.get_by_role("button", name=re.compile(r"^CHECKOUT")).click()
 
-    # Proceed to checkout from the cart page
-    def proceed_to_checkout(self, total_price_label):
-        self.page.get_by_role("button", name=f"CHECKOUT ({total_price_label})").click()
 
-    # Continue to the payment section after checkout
-    def continue_to_payment(self):
-        self.page.goto("https://advantageonlineshopping.com/#/orderPayment")
-        self.page.get_by_role("button", name="NEXT").click()
+    def login_during_checkout(self, username, password):
+        self.page.locator("input[name='usernameInOrderPayment']").fill(username)
+        self.page.locator("input[name='passwordInOrderPayment']").fill(password)
+        self.page.get_by_role("button", name="LOGIN").click()
 
-    # Enter SafePay details and confirm the payment
-    def enter_safepay_and_pay(self, safepay_username, safepay_password):
-        self.page.locator("input[name=\"safepay_username\"]").fill(safepay_username)
-        self.page.locator("input[name=\"safepay_password\"]").fill(safepay_password)
+    def click_next_on_payment(self):
+        #self.page.locator("#next_btn").click()
+        self.page.get_by_role("button", name="NEXT").first.click()
+
+    def pay_with_safepay(self):
         self.page.locator("#pay_now_btn_SAFEPAY").click()
